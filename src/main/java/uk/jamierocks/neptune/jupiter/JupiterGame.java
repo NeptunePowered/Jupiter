@@ -39,11 +39,11 @@ import org.spongepowered.api.world.TeleportHelper;
 public class JupiterGame implements Game {
 
     private final MinecraftVersion minecraftVersion;
-    private final Server sever;
+    private final Server server;
 
     public JupiterGame(net.canarymod.api.Server server) {
-        this.sever = new JupiterServer(server);
-        this.minecraftVersion = new JupiterMinecraftVersion(server.getServerVersion());
+        this.server = new JupiterServer(server);
+        this.minecraftVersion = new JupiterMinecraftVersion(server.getServerVersion(), server.getProtocolVersion());
     }
 
     @Override
@@ -53,7 +53,7 @@ public class JupiterGame implements Game {
 
     @Override
     public Server getServer() {
-        return sever;
+        return server;
     }
 
     @Override

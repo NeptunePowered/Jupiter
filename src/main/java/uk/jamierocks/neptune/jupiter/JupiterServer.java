@@ -147,7 +147,7 @@ public class JupiterServer implements Server {
 
     @Override
     public void broadcastMessage(Text message) {
-        server.broadcastMessage(message.toString());
+        server.broadcastMessage(Texts.toLegacy(message));
     }
 
     @Override
@@ -177,7 +177,7 @@ public class JupiterServer implements Server {
 
     @Override
     public void shutdown(Text kickMessage) {
-
+        server.initiateShutdown(Texts.toLegacy(kickMessage));
     }
 
     @Override

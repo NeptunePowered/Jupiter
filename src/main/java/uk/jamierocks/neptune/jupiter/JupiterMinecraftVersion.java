@@ -25,12 +25,14 @@ package uk.jamierocks.neptune.jupiter;
 
 import org.spongepowered.api.MinecraftVersion;
 
-public class JupiterMinecraftVersion implements MinecraftVersion {
+public class JupiterMinecraftVersion implements ProtocolMinecraftVersion {
 
     private final String name;
+    private final int protocol;
 
-    public JupiterMinecraftVersion(String name) {
+    public JupiterMinecraftVersion(String name, int protocol) {
         this.name = name;
+        this.protocol = protocol;
     }
 
     @Override
@@ -44,7 +46,12 @@ public class JupiterMinecraftVersion implements MinecraftVersion {
     }
 
     @Override
-    public int compareTo(MinecraftVersion o) {
-        return o.getName() == getName() ? 0 : 1;
+    public int compareTo(MinecraftVersion to) {
+        return equals(to) ? 0 : getProtocol() - ((ProtocolMinecraftVersion) to).getProtocol();
+    }
+
+    @Override
+    public int getProtocol() {
+        return protocol;
     }
 }

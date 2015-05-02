@@ -1,4 +1,4 @@
-package uk.jamierocks.neptune.jupiter;
+package org.neptunepowered.jupiter;
 
 import org.spongepowered.api.MinecraftVersion;
 

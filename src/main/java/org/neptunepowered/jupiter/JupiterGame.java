@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package uk.jamierocks.neptune.jupiter;
+package org.neptunepowered.jupiter;
 
 import org.spongepowered.api.Game;
 import org.spongepowered.api.GameRegistry;
